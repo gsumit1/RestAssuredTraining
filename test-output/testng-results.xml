@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="5130" started-at="2019-11-12T10:40:16Z" finished-at="2019-11-12T10:40:21Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="5130" started-at="2019-11-12T10:40:16Z" finished-at="2019-11-12T10:40:21Z">
+      <class name="RestAssuredDemo.RestAssuredDemo.k_authentication">
+        <test-method status="PASS" signature="auth()[pri:0, instance:RestAssuredDemo.RestAssuredDemo.k_authentication@6f7fd0e6]" name="auth" duration-ms="5078" started-at="2019-11-12T10:40:16Z" finished-at="2019-11-12T10:40:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- auth -->
+      </class> <!-- RestAssuredDemo.RestAssuredDemo.k_authentication -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
