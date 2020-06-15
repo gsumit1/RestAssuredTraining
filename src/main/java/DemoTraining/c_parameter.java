@@ -1,57 +1,33 @@
 package DemoTraining;
+
 import static io.restassured.RestAssured.given;
 import java.util.ArrayList;
 import org.testng.annotations.Test;
-
-import io.restassured.http.ContentType;
+import static org.hamcrest.Matchers.equalTo;
 
 public class c_parameter {
-		//@Test
-		public static void queryParam() {
-			String a= 
-			given().queryParam("id", "2").get("http://localhost:3000/testDemo").asString();
-			System.out.println(a);
-		}
-		
-		//@Test //code is not working
-		public static void formParam() {
-			given().formParam("id", "2").post("http://localhost:3000/testDemo");
-			}
-			
-		
-		//@Test
-		public static void Param() {
-			String a= 
-			given().param("id", "2").get("http://localhost:3000/testDemo").asString();
-			System.out.println(a);
-		}
-		
-		
-		//@Test //Example of multiple param
-		public static void Param1() {
-			ArrayList<String> list=new ArrayList<String>();
-			list.add("testData");
-			given().param("id", "2").param("listparam",list ).get("http://localhost:3000/testDemo").asString();
-			given().param("id", "2").param("a", "test").param("listparam",list ).get("http://localhost:3000/testDemo").asString();			
-		}
-		
-		//Example end point is not working
-		@Test
-		public static void pathParam() {
-				given().pathParam("type", "json").param("section","Domains" ).get("http://api.fonts.com/{section}/{type}").then().statusCode(400);	
-		}
-		
+	@Test
+	public static void queryParam() {
+		given().queryParam("text", "testcase").when().get("http://md5.jsontest.com").then().assertThat().body("md5",
+				equalTo("7489a25fc99976f06fecb807991c61cf"));
 
-		@Test 
-		//Example end point is not working
-		public static void contentType() {
-				given().contentType(ContentType.JSON).param("section","Domains" ).get("http://api.fonts.com/{section}/{type}").then().statusCode(400);	
-		}
-		
-		/*given().
-        pathParam("hotelId", "My Hotel").
-        pathParam("roomNumber", 23).
-        when(). 
-        post("/reserve/{hotelId}/{roomNumber}").
-        then().*/
+	}
+	
+	@Test
+	public static void pathParam() {
+		given().pathParam("countryCode", "us").pathParam("zipCode", "90210").when()
+				.get("http://api.zippopotam.us/{countryCode}/{zipCode}").then().assertThat()
+				.body("country", equalTo("United States"));
+
+	}
+	
+	//@Test //Example of multiple param
+	public static void Param1() {
+		ArrayList<String> list = new ArrayList<String>();
+		list.add("testData");
+		given().param("id", "2").param("listparam", list).get("http://localhost:3000/testDemo").asString();
+		given().param("id", "2").param("a", "test").param("listparam", list).get("http://localhost:3000/testDemo")
+				.asString();
+	}
+
 }

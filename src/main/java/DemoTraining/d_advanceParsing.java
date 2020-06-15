@@ -2,22 +2,21 @@ package DemoTraining;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
-import static io.restassured.RestAssured.get;
 import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.greaterThan;
 public class d_advanceParsing {
 
-	//@Test 
+	@Test 
 	public  void example0() {
-		given().get("https://jsonplaceholder.typicode.com/posts/3").then().log().all()
-		.body("title",equalTo("ea molestias quasi exercitationem repellat qui ipsa sit aut"));
+		given().get("https://jsonplaceholder.typicode.com/posts/1").then()
+		.body("title",equalTo("sunt aut facere repellat provident occaecati excepturi optio reprehenderit"));
 
 	}
 
-	//@Test
+	@Test
 	public  void example01() {
-		given().get("https://jsonplaceholder.typicode.com/posts/3").then().log().all()
+		given().get("https://jsonplaceholder.typicode.com/posts/1").then()
 		.body("userId",equalTo(1));
 
 	}

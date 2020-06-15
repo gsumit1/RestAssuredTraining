@@ -8,8 +8,7 @@ import io.restassured.response.Response;
 public class b_getHeader {
 		@Test
 		public static void listAnalysis() {
-			Response response=given().get("http://localhost:3000/country");
-			//Response response=given().get("http://localhost:3000/testDemo?id=1");
+			Response response=given().get("https://jsonplaceholder.typicode.com/posts");
 			for(Header a: response.getHeaders()) {
 				System.out.println(a.getName()+">>>>>>>>>>>>>"+a.getValue());
 			}
