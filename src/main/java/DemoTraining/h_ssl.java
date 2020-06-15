@@ -15,7 +15,7 @@ public class h_ssl {
 	To change to another protocol use an overloaded versionen of relaxedHTTPSValidation. 
 	For example: given().relaxedHTTPSValidation("TLS").when().get("https://some_server.com") */
 	
-	//@Test
+	@Test
 	public static void ssl() {
 		String response = 
 				given().get("https://jsonplaceholder.typicode.com/photos/1")
@@ -28,7 +28,7 @@ public class h_ssl {
 		given().get(response).then().statusCode(200);
 	}
 	
-	@Test
+	//@Test
 	public static void ssl1() {
 		String response = 
 				given().get("https://jsonplaceholder.typicode.com/photos/1")

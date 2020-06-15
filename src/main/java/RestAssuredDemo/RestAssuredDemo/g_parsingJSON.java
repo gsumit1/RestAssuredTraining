@@ -13,7 +13,7 @@ import io.restassured.response.Response;
 public class g_parsingJSON {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException, ParseException {
-		Response response = given().when().get("https://jsonplaceholder.typicode.com/posts/?id=3").then()
+		Response response = given().when().get("https://jsonplaceholder.typicode.com/posts/?id=1").then()
 				.assertThat().statusCode(200).and().extract().response();
 		System.out.println(readMethod(response).get("id"));
 		System.out.println(readMethod(response).get("title"));

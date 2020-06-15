@@ -10,7 +10,6 @@ public class b_getHeader {
 		public static void listAnalysis() {
 			Response response=given().get("http://localhost:3000/country");
 			//Response response=given().get("http://localhost:3000/testDemo?id=1");
-
 			for(Header a: response.getHeaders()) {
 				System.out.println(a.getName()+">>>>>>>>>>>>>"+a.getValue());
 			}
