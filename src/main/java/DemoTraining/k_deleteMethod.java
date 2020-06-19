@@ -5,25 +5,28 @@ public class k_deleteMethod {
 
 	public static void main(String[] args) {
 		
-		int response = given().when().get("https://jsonplaceholder.typicode.com/posts").then().assertThat().statusCode(200).and()
-				.extract().jsonPath().getList("$").size();
-		System.out.println(response);
+		given().when().delete("http://localhost:3000/posts/10").then().statusCode(200);
+		
+		//int response = given().when().get("https://jsonplaceholder.typicode.com/posts").jsonPath().getList("$").size();
+		//System.out.println(response);
 		//delete();
 	}
 	
 	public static void delete() {
-		int response = given().when().get("http://localhost:3000/posts").then().assertThat().statusCode(200).and()
-				.extract().jsonPath().getList("$").size();
-		System.out.println(response);
+				
+		//int response = given().when().get("http://localhost:3000/posts").jsonPath().getList("$").size();
+		//System.out.println(response);
 		
 		//individual
-		given().when().delete("http://localhost:3000/posts/5").then().statusCode(200);
+		given().when().delete("http://localhost:3000/posts/6").then().statusCode(200);
 		
 		
-		//all
+	/*
 		for (int i = 6; i <= response; i++) {
 			given().pathParam("id", i).when().delete("http://localhost:3000/posts/{id}").then().statusCode(200);
 			System.out.println("deleted");} 
-		}
+		}*/
+	
+	}
 
 }

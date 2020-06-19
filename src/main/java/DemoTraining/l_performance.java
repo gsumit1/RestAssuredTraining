@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.lessThan;
 
 public class l_performance {
-	@Test
+	//@Test
 	public static void example1() {
 		long t= given().get("https://jsonplaceholder.typicode.com/posts").time();
 		System.out.println("Time in ms "+t);
@@ -18,6 +18,6 @@ public class l_performance {
 	}
 	@Test
 	public static void example3() {
-		given().get("https://jsonplaceholder.typicode.com/posts").then().time(lessThan(2000L));		
+		given().get("https://jsonplaceholder.typicode.com/posts").then().time(lessThan(100L));		
 	}
 }

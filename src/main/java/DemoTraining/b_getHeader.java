@@ -9,6 +9,7 @@ public class b_getHeader {
 		@Test
 		public static void listAnalysis() {
 			Response response=given().get("https://jsonplaceholder.typicode.com/posts");
+			
 			for(Header a: response.getHeaders()) {
 				System.out.println(a.getName()+">>>>>>>>>>>>>"+a.getValue());
 			}

@@ -34,7 +34,7 @@ public class d_advanceParsing {
 		get("http://localhost:3000/store").
 		then().
 		body("book.author[0]", equalTo("Nigel Rees"));}
-
+	
 
 	@Test
 	public void example4() {

@@ -10,19 +10,19 @@ import io.restassured.response.Response;
 
 public class e_advanceParsing {
 
-	@Test //capture the response as string
+	//@Test //capture the response as string
 	public void example3() {
 		String response = given().get("https://jsonplaceholder.typicode.com/posts/3").asString();
 		System.out.println(response);
 	}
 
-	@Test //capture the response as inputstream
+	//@Test //capture the response as inputstream
 	public void inputStream() {
 		InputStream response = get("https://jsonplaceholder.typicode.com/posts").asInputStream();
 		System.out.println(response.toString());
 	}
 
-	@Test
+	//@Test
 	public void jsonPath1() {
 		String response = given().get("https://jsonplaceholder.typicode.com/photos/1").path("url");
 		System.out.println(response.toString());
@@ -34,7 +34,7 @@ public class e_advanceParsing {
 	 * subsequent requests.
 	 */
 
-	@Test
+	//@Test
 	public void jsonPath() {
 		String response = given().get("https://jsonplaceholder.typicode.com/photos/1").then()
 				.contentType(ContentType.JSON).body("albumId", equalTo(1)).extract().path("url");
@@ -50,7 +50,7 @@ public class e_advanceParsing {
 	 * alternative to XPath for JSON. E.g. given the following Object document:
 	 */
 
-	@Test
+	//@Test
 	public void jsonPath2() {
 		String response = given().get("https://jsonplaceholder.typicode.com/photos/1").jsonPath()
 				.getString("thumbnailUrl");
@@ -67,7 +67,7 @@ public class e_advanceParsing {
 	}
 
 	// The entire response object including headers, cookies and body etc.
-	@Test
+	//@Test
 	public void responseObject() {
 		Response response = given().when().get("https://jsonplaceholder.typicode.com/photos/1").then().assertThat()
 				.statusCode(200).and().extract().response();

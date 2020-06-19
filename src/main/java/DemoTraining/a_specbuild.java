@@ -19,7 +19,7 @@ public class a_specbuild {
 		
 	}
 	
-	@Test
+	//@Test
 	public void test2() {
 		ResponseSpecification spec=new ResponseSpecBuilder().expectContentType(ContentType.JSON).expectStatusCode(200).build();
 		given().when().get("http://api.zippopotam.us/us/90210").then().spec(spec).and().body("country", equalTo("United States"));
